@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Modelo de Bauxita</title>
+  </head>
+  <body>
+    <h2>Costos Fijos de Funcionamiento</h2>
+
+    <form method="post">
+      <input type="text" placeholder="Costo planta B" name="costo_B">
+      <input type="text" placeholder="Costo planta C" name="costo_C">
+      <input type="text" placeholder="Costo planta D" name="costo_D">
+      <input type="text" placeholder="Costo planta E" name="costo_E">
+      <button type="submit">Ejecutar modelo</button>
+    </form>
+
+    {% if costo_total %}
+      <h3>Resultado:</h3>
+      <pre>{{ resultado }}</pre>
+    {% endif %}
+  </body>
+</html>
+
+
