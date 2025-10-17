@@ -9,13 +9,13 @@ def home():
     resultado = ""
 
     if request.method == "POST":
-        # 1️⃣ Capturar los costos ingresados por el usuario
+        # Capturar los costos ingresados por el usuario
         costo_B = float(request.form.get("costo_B"))
         costo_C = float(request.form.get("costo_C"))
         costo_D = float(request.form.get("costo_D"))
         costo_E = float(request.form.get("costo_E"))
 
-        # 2️⃣ Definición del modelo
+        # Definición del modelo
         modelo = LpProblem("Problema_Bauxita", LpMinimize)
 
         # Conjuntos
@@ -32,7 +32,7 @@ def home():
         costo_produccion = {"B": 330, "C": 320, "D": 380, "E": 240}
         costo_esmaltado = {"D": 8500, "E": 5200}
 
-        # 💡 Usamos los costos fijos que ingresó el usuario
+        # Usamos los costos fijos que ingresó el usuario
         costo_fijo = {"B": costo_B, "C": costo_C, "D": costo_D, "E": costo_E}
 
         ctran_b = {
